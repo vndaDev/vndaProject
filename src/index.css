@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 7% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 5% 7%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 5% 7%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 182 100% 29%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 11%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 4% 11%;
+    --muted-foreground: 240 5% 50%;
+
+    --accent: 240 4% 11%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 4% 13%;
+    --input: 240 4% 13%;
+    --ring: 182 100% 29%;
+
+    --radius: 16px;
+
+    --sidebar-background: 240 5% 7%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 182 100% 29%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4% 11%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 4% 13%;
+    --sidebar-ring: 182 100% 29%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  ::selection {
+    background: hsl(182 100% 29% / 0.3);
+    color: white;
+  }
+}
+
+/* Fade-in-up animation */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+
+/* Ambient glow */
+@keyframes ambient-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
